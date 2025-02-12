@@ -1,4 +1,4 @@
-FROM debian:trixie-slim AS builder
+FROM rocm/dev-ubuntu-24.04 AS builder
 ARG TARGETARCH
 ARG TARGETVARIANT
 
@@ -33,7 +33,7 @@ python3 -m venv .venv
 .venv/bin/python3 -m build -w
 EOS
 
-FROM debian:trixie-slim
+FROM rocm/dev-ubuntu-24.04
 ARG TARGETARCH
 ARG TARGETVARIANT
 
